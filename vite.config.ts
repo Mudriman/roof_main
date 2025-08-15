@@ -11,5 +11,8 @@ export default defineConfig({
       '@assets': path.resolve(__dirname, './src/assets'),
     },
   },
-  base: "/"
+  base: "/",
+  build: {
+    assetsInlineLimit: 0 // Отключаем встраивание изображений в JS
+  }
 })
