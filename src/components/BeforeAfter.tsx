@@ -1,5 +1,5 @@
 // components/BeforeAfter.tsx
-import { Project } from "../../constants/type";
+import { Project } from "../constants/type";
 
 interface BeforeAfterProps {
   project: Project;

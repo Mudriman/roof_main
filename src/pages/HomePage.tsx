@@ -6,8 +6,9 @@ import { useProjects } from '../../context/ProjectsContext';
 import { BeforeAfterSection } from '../components/BeforeAfterSection';
 import { SubApplication } from '../components/SubApplication';
 import { TestimonialsSection } from '../components/TestimonialsSection';
-import { testimonialsData } from '../../constants/testimonials';
+import { testimonialsData } from '../constants/testimonials';
 import { FeedbackForm } from '../components/FeedbackForm';
+import homeBack from '@assets/main_home.png';
 const features = [
     {
         icon: ShieldCheck,
@@ -41,7 +42,7 @@ const Hero = () => {
             )}
             <div className="absolute inset-0">
                 <img
-                    src="/main_home.png"
+                    src={homeBack}
                     alt="Крыша"
                     className="w-full h-full object-cover"
                 />

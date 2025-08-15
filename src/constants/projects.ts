@@ -1,5 +1,59 @@
 import type { Project } from "./type";
 
+import bjegokayAfterImg from '@/assets/projects/bjegokay/after.jpg';
+import bjegokayFirstImg from '@/assets/projects/bjegokay/step-1.jpg';
+import bjegokaySecondImg from '@/assets/projects/bjegokay/step-2.jpg';
+import bjegokayThirdImg from '@/assets/projects/bjegokay/step-3.jpg';
+import bjegokayFourthImg from '@/assets/projects/bjegokay/step-4.jpg';
+
+
+import frunzeFirstImg from '@/assets/projects/frunze/frunze-1.jpg';
+import frunzeSecondImg from '@/assets/projects/frunze/frunze-2.jpg';
+import frunzeThirdImg from '@/assets/projects/frunze/frunze-3.jpg';
+import frunzeFourthImg from '@/assets/projects/frunze/frunze-4.jpg';
+import frunzeFifthImg from '@/assets/projects/frunze/frunze-5.jpg';
+
+import ivanovskayaFirstImg from '@/assets/projects/ivanovskaya/ivanovskaya-1.jpg';
+import ivanovskayaSecondImg from '@/assets/projects/ivanovskaya/ivanovskaya-2.jpg';
+import ivanovskayaThirdImg from '@/assets/projects/ivanovskaya/ivanovskaya-3.jpg';
+import ivanovskayaFourthImg from '@/assets/projects/ivanovskaya/ivanovskaya-4.jpg';
+import ivanovskayaFifthImg from '@/assets/projects/ivanovskaya/ivanovskaya-6.jpg';
+import ivanovskayaSixthImg from '@/assets/projects/ivanovskaya/ivanovskaya-7.jpg';
+import ivanovskayaSeventhImg from '@/assets/projects/ivanovskaya/ivanovskaya-8.jpg';
+
+import voronegskayaFirstImg from '@/assets/projects/voronegskaya/voronegskaya-1.jpg';
+import voronegskayaSecondImg from '@/assets/projects/voronegskaya/voronegskaya-2.jpg';
+import voronegskayaThirdImg from '@/assets/projects/voronegskaya/voronegskaya-3.jpg';
+import voronegskayaFourthImg from '@/assets/projects/voronegskaya/voronegskaya-4.jpg';
+import voronegskayaFifthImg from '@/assets/projects/voronegskaya/voronegskaya-5.jpg';
+
+import galleryZerosImg from '@/assets/projects/gallery/gallery-0.jpg';
+import galleryFirstImg from '@/assets/projects/gallery/gallery-1.jpg';
+import gallerySecondImg from '@/assets/projects/gallery/gallery-2.jpg';
+import galleryThirdImg from '@/assets/projects/gallery/gallery-3.jpg';
+import galleryFourthImg from '@/assets/projects/gallery/gallery-4.jpg';
+import galleryFifthImg from '@/assets/projects/gallery/gallery-5.jpg';
+import gallerySixthImg from '@/assets/projects/gallery/gallery-6.jpg';
+
+import elizavetkaFirstImg from '@/assets/projects/elizavetka/elizavetka-1.jpg';
+import elizavetkaSecondImg from '@/assets/projects/elizavetka/elizavetka-2.jpg';
+import elizavetkaThirdImg from '@/assets/projects/elizavetka/elizavetka-3.jpg';
+import elizavetkaFourthImg from '@/assets/projects/elizavetka/elizavetka-4.jpg';
+import elizavetkaFifthImg from '@/assets/projects/elizavetka/elizavetka-5.jpg';
+import elizavetkaSixthImg from '@/assets/projects/elizavetka/elizavetka-6.jpg';
+
+import guzeriplFirstImg from '@/assets/projects/guzeripl/guzeripl-1.jpg';
+import guzeriplSecondImg from '@/assets/projects/guzeripl/guzeripl-2.jpg';
+import guzeriplThirdImg from '@/assets/projects/guzeripl/guzeripl-3.jpg';
+import guzeriplFourthImg from '@/assets/projects/guzeripl/guzeripl-4.jpg';
+import guzeriplSeventhImg from '@/assets/projects/guzeripl/guzeripl-7.jpg';
+
+import kpAvstriaFirstImg from '@/assets/projects/kp_avstria/austria-1.jpg';
+import kpAvstriaSecondImg from '@/assets/projects/kp_avstria/austria-2.jpg';
+import kpAvstriaThirdImg from '@/assets/projects/kp_avstria/austria-3.jpg';
+import kpAvstriaFourthImg from '@/assets/projects/kp_avstria/austria-4.jpg';
+import kpAvstriaSeventhImg from '@/assets/projects/kp_avstria/austria-7.jpg';
+
 export const projects: Project[] = [
   {
     id: "bjegokay",
@@ -14,45 +68,45 @@ export const projects: Project[] = [
     year: 2022,
     area: 100,
     status: "completed",
-    mainImage: "/projects/bjegokay/after.jpg",
+    mainImage: bjegokayAfterImg,
     beforeAfter: {
-      before: "/projects/bjegokay/step-1.jpg",
-      after: "/projects/bjegokay/after.jpg"
+      before: bjegokayFirstImg,
+      after: bjegokayAfterImg
     },
     stages: [
       {
         id: 1,
         title: "Начальное состояние",
         description: "На кровле строительный мусор и неровности.",
-        imageUrl: "/projects/bjegokay/step-1.jpg",
+        imageUrl: bjegokayFirstImg,
         completed: true
       },
       {
         id: 2,
         title: "Подготовка основания",
         description: "Убрали мусор, очистили основание, выровняли поверхность.",
-        imageUrl: "/projects/bjegokay/step-2.jpg",
+        imageUrl: bjegokaySecondImg,
         completed: true
       },
       {
         id: 3,
         title: "Монтаж утеплителя",
         description: "Укладка и закрепление утеплителя, установка воронки.",
-        imageUrl: "/projects/bjegokay/step-3.jpg",
+        imageUrl: bjegokayThirdImg,
         completed: true
       },
       {
         id: 4,
         title: "Монтаж ПВХ мембраны",
         description: "Укладка и сварка ПВХ мембраны с обеспечением герметичности.",
-        imageUrl: "/projects/bjegokay/step-4.jpg",
+        imageUrl: bjegokayFourthImg,
         completed: true
       },
       {
         id: 5,
         title: "Устройство примыканий",
         description: "Финальный вид кровельного покрытия.",
-        imageUrl: "/projects/bjegokay/after.jpg",
+        imageUrl: bjegokayAfterImg,
         completed: true
       }
     ],
@@ -81,45 +135,45 @@ export const projects: Project[] = [
     year: 2021,
     area: 120,
     status: "completed",
-    mainImage: "/projects/frunze/frunze-5.jpg",
+    mainImage: frunzeFifthImg,
     beforeAfter: {
-      before: "/projects/frunze/frunze-1.jpg",
-      after: "/projects/frunze/frunze-5.jpg"
+      before: frunzeFirstImg,
+      after: frunzeFifthImg
     },
     stages: [
       {
         id: 1,
         title: "Начальное состояние",
         description: "На кровле строительный мусор и неровности.",
-        imageUrl: "/projects/frunze/frunze-1.jpg",
+        imageUrl: frunzeFirstImg,
         completed: true
       },
       {
         id: 2,
         title: "Подготовка основания",
         description: "Убрали мусор, очистили основание, выровняли поверхность.",
-        imageUrl: "/projects/frunze/frunze-2.jpg",
+        imageUrl: frunzeSecondImg,
         completed: true
       },
       {
         id: 3,
         title: "Монтаж утеплителя",
         description: "Укладка и закрепление утеплителя, установка воронки.",
-        imageUrl: "/projects/frunze/frunze-3.jpg",
+        imageUrl: frunzeThirdImg,
         completed: true
       },
       {
         id: 4,
         title: "Монтаж ПВХ мембраны",
         description: "Укладка и сварка ПВХ мембраны с обеспечением герметичности.",
-        imageUrl: "/projects/frunze/frunze-4.jpg",
+        imageUrl: frunzeFourthImg,
         completed: true
       },
       {
         id: 5,
         title: "Устройство примыканий",
         description: "Финальный вид кровельного покрытия.",
-        imageUrl: "/projects/frunze/frunze-5.jpg",
+        imageUrl: frunzeFifthImg,
         completed: true
       }
     ],
@@ -148,45 +202,45 @@ export const projects: Project[] = [
     year: 2021,
     area: 120,
     status: "completed",
-    mainImage: "/projects/ivanovskaya/ivanovskaya-8.jpg",
+    mainImage: ivanovskayaSeventhImg,
     beforeAfter: {
-      before: "/projects/ivanovskaya/ivanovskaya-1.jpg",
-      after: "/projects/ivanovskaya/ivanovskaya-8.jpg"
+      before: ivanovskayaFirstImg,
+      after: ivanovskayaSeventhImg
     },
     stages: [
       {
         id: 1,
         title: "Начальное состояние",
         description: "На кровле строительный мусор и неровности.",
-        imageUrl: "/projects/ivanovskaya/ivanovskaya-2.jpg",
+        imageUrl: ivanovskayaSecondImg,
         completed: true
       },
       {
         id: 2,
         title: "Подготовка основания",
         description: "Убрали мусор, очистили основание, выровняли поверхность.",
-        imageUrl: "/projects/ivanovskaya/ivanovskaya-3.jpg",
+        imageUrl: ivanovskayaThirdImg,
         completed: true
       },
       {
         id: 3,
         title: "Монтаж утеплителя",
         description: "Укладка и закрепление утеплителя, установка воронки.",
-        imageUrl: "/projects/ivanovskaya/ivanovskaya-4.jpg",
+        imageUrl: ivanovskayaFourthImg,
         completed: true
       },
       {
         id: 4,
         title: "Монтаж ПВХ мембраны",
         description: "Укладка и сварка ПВХ мембраны с обеспечением герметичности.",
-        imageUrl: "/projects/ivanovskaya/ivanovskaya-6.jpg",
+        imageUrl: ivanovskayaFifthImg,
         completed: true
       },
       {
         id: 5,
         title: "Финальный вид кровли",
         description: "Так выглядит кровля после окончания работ.",
-        imageUrl: "/projects/ivanovskaya/ivanovskaya-7.jpg",
+        imageUrl: ivanovskayaSixthImg,
         completed: true
       }
     ],
@@ -216,45 +270,45 @@ export const projects: Project[] = [
     year: 2021,
     area: 120,
     status: "completed",
-    mainImage: "/projects/voronegskaya/voronegskaya-5.jpg",
+    mainImage: voronegskayaFifthImg,
     beforeAfter: {
-      before: "/projects/voronegskaya/voronegskaya-1.jpg",
-      after: "/projects/voronegskaya/voronegskaya-5.jpg"
+      before: voronegskayaFirstImg,
+      after: voronegskayaFifthImg
     },
     stages: [
       {
         id: 1,
         title: "Начальное состояние",
         description: "На кровле строительный мусор и неровности.",
-        imageUrl: "/projects/voronegskaya/voronegskaya-1.jpg",
+        imageUrl: voronegskayaFirstImg,
         completed: true
       },
       {
         id: 2,
         title: "Подготовка основания",
         description: "Убрали мусор, очистили основание, выровняли поверхность.",
-        imageUrl: "/projects/voronegskaya/voronegskaya-2.jpg",
+        imageUrl: voronegskayaSecondImg,
         completed: true
       },
       {
         id: 3,
         title: "Монтаж утеплителя",
         description: "Укладка и закрепление утеплителя, установка воронки.",
-        imageUrl: "/projects/voronegskaya/voronegskaya-3.jpg",
+        imageUrl: voronegskayaThirdImg,
         completed: true
       },
       {
         id: 4,
         title: "Монтаж ПВХ мембраны",
         description: "Укладка и сварка ПВХ мембраны с обеспечением герметичности.",
-        imageUrl: "/projects/voronegskaya/voronegskaya-4.jpg",
+        imageUrl: voronegskayaFourthImg,
         completed: true
       },
       {
         id: 5,
         title: "Устройство примыканий",
         description: "Финальный вид кровельного покрытия.",
-        imageUrl: "/projects/voronegskaya/voronegskaya-5.jpg",
+        imageUrl: voronegskayaFifthImg,
         completed: true
       }
     ],
@@ -272,10 +326,10 @@ export const projects: Project[] = [
   },
   {
     id: "gallery",
-    title: "MEGA адыгея",
+    title: "ТРЦ Галерея",
     description: "Ремонт кровли",
     fullDescription: [
-      "Компания SOLID ROOF выполнила полный комплекс работ по ремонту кровли ТЦ MEGA. Проект включал в себя подготовку основания, монтаж утеплителя и гидроизоляционного слоя из ПВХ мембраны.",
+      "Компания SOLID ROOF выполнила полный комплекс работ по ремонту кровли ТРЦ Галерея. Проект включал в себя подготовку основания, монтаж утеплителя и гидроизоляционного слоя из ПВХ мембраны.",
       "В результате заказчик получил качественный ремонт сложных кровельных узлов."
     ],
     category: "roof-repair",
@@ -283,59 +337,59 @@ export const projects: Project[] = [
     year: 2017,
     area: 200,
     status: "completed",
-    mainImage: "/projects/gallery/gallery-4.jpg",
+    mainImage:  galleryFourthImg,
     beforeAfter: {
-      before: "/projects/gallery/gallery-0.jpg",
-      after: "/projects/gallery/gallery-4.jpg"
+      before: galleryZerosImg,
+      after:  galleryFourthImg
     },
     stages: [
       {
         id: 1,
         title: "Начальное состояние",
         description: "На кровельном покрытии застарелая грязь и лужи, что означает постоянное скопление воды в этом месте.",
-        imageUrl: "/projects/gallery/gallery-0.jpg",
+        imageUrl: galleryZerosImg,
         completed: true
       },
       {
         id: 2,
         title: "Монтаж утеплителя",
         description: "Убрали мусор, демонтировали покрытие, смонтировали утеплитель.",
-        imageUrl: "/projects/gallery/gallery-1.jpg",
+        imageUrl: galleryFirstImg,
         completed: true
       },
       {
         id: 3,
         title: "Монтаж ПВХ мембраны",
         description: "Укладка и сварка ПВХ мембраны с обеспечением герметичности.",
-        imageUrl: "/projects/gallery/gallery-2.jpg",
+        imageUrl: gallerySecondImg,
         completed: true
       },
       {
         id: 4,
         title: "Устройство примыканий",
         description: "95% работы сделано.",
-        imageUrl: "/projects/gallery/gallery-3.jpg",
+        imageUrl:  galleryThirdImg,
         completed: true
       },
       {
         id: 5,
         title: "Устройство примыканий",
         description: "Финальный вид гидроизолированных узлов.",
-        imageUrl: "/projects/gallery/gallery-4.jpg",
+        imageUrl:  galleryFourthImg,
         completed: true
       },
       {
         id: 6,
         title: "Устройство примыканий",
         description: "Такой вид имеют решения, которые не работают",
-        imageUrl: "/projects/gallery/gallery-5.jpg",
+        imageUrl:  galleryFifthImg,
         completed: true
       },
       {
         id: 7,
         title: "Устройство примыканий",
         description: "Аккуратное гидроизолирование проблемного места.",
-        imageUrl: "/projects/gallery/gallery-6.jpg",
+        imageUrl: gallerySixthImg,
         completed: true
       }
     ],
@@ -363,45 +417,45 @@ export const projects: Project[] = [
     year: 2021,
     area: 120,
     status: "completed",
-    mainImage: "/projects/elizavetka/elizavetka-5.jpg",
+    mainImage: elizavetkaFifthImg,
     beforeAfter: {
-      before: "/projects/elizavetka/elizavetka-1.jpg",
-      after: "/projects/elizavetka/elizavetka-5.jpg"
+      before: elizavetkaFirstImg,
+      after: elizavetkaFifthImg
     },
     stages: [
       {
         id: 1,
         title: "Начальное состояние",
         description: "На кровле строительный мусор и неровности.",
-        imageUrl: "/projects/elizavetka/elizavetka-1.jpg",
+        imageUrl: elizavetkaFirstImg,
         completed: true
       },
       {
         id: 2,
         title: "Подготовка основания",
         description: "Убрали мусор, очистили основание, выровняли поверхность.",
-        imageUrl: "/projects/elizavetka/elizavetka-2.jpg",
+        imageUrl: elizavetkaSecondImg,
         completed: true
       },
       {
         id: 3,
         title: "Монтаж утеплителя",
         description: "Укладка и закрепление утеплителя, установка воронок.",
-        imageUrl: "/projects/elizavetka/elizavetka-3.jpg",
+        imageUrl: elizavetkaThirdImg,
         completed: true
       },
       {
         id: 4,
         title: "Монтаж ПВХ мембраны",
         description: "Укладка и сварка ПВХ мембраны с обеспечением герметичности.",
-        imageUrl: "/projects/elizavetka/elizavetka-4.jpg",
+        imageUrl: elizavetkaFourthImg,
         completed: true
       },
       {
         id: 5,
         title: "Устройство примыканий",
         description: "Финальный вид кровельного покрытия.",
-        imageUrl: "/projects/elizavetka/elizavetka-6.jpg",
+        imageUrl: elizavetkaSixthImg,
         completed: true
       }
     ],
@@ -430,45 +484,45 @@ export const projects: Project[] = [
     year: 2021,
     area: 120,
     status: "completed",
-    mainImage: "/projects/guzeripl/guzeripl-7.jpg",
+    mainImage: guzeriplSeventhImg,
     beforeAfter: {
-      before: "/projects/guzeripl/guzeripl-1.jpg",
-      after: "/projects/guzeripl/guzeripl-7.jpg"
+      before: guzeriplFirstImg,
+      after: guzeriplSeventhImg
     },
     stages: [
       {
         id: 1,
         title: "Начальное состояние",
         description: "Так выглядит кровля до начала работ.",
-        imageUrl: "/projects/guzeripl/guzeripl-1.jpg",
+        imageUrl:guzeriplFirstImg ,
         completed: true
       },
       {
         id: 2,
         title: "Подготовка основания",
         description: "Очистили поверхность и произвели укладку геотекстиля.",
-        imageUrl: "/projects/guzeripl/guzeripl-2.jpg",
+        imageUrl: guzeriplSecondImg,
         completed: true
       },
       {
         id: 3,
         title: "Монтаж ПВХ мембраны",
         description: "Укладка и сварка ПВХ мембраны с обеспечением герметичности.",
-        imageUrl: "/projects/guzeripl/guzeripl-3.jpg",
+        imageUrl: guzeriplThirdImg,
         completed: true
       },
       {
         id: 4,
         title: "Гидроизоляция узлов",
         description: "Герметизация систем кровельных коммуникаций.",
-        imageUrl: "/projects/guzeripl/guzeripl-4.jpg",
+        imageUrl: guzeriplFourthImg,
         completed: true
       },
       {
         id: 5,
         title: "Устройство примыканий",
         description: "Финальный вид кровельного покрытия.",
-        imageUrl: "/projects/guzeripl/guzeripl-7.jpg",
+        imageUrl: guzeriplSeventhImg,
         completed: true
       }
     ],
@@ -497,45 +551,45 @@ export const projects: Project[] = [
     year: 2021,
     area: 120,
     status: "completed",
-    mainImage: "/projects/kp_avstria/austria-7.jpg",
+    mainImage:  kpAvstriaSeventhImg ,
     beforeAfter: {
-      before: "/projects/kp_avstria/austria-1.jpg",
-      after: "/projects/kp_avstria/austria-7.jpg"
+      before: kpAvstriaFirstImg,
+      after:  kpAvstriaSeventhImg 
     },
     stages: [
       {
         id: 1,
         title: "Начальное состояние",
         description: "Так выглядит кровля до начала работ.",
-        imageUrl: "/projects/kp_avstria/austria-1.jpg",
+        imageUrl: kpAvstriaFirstImg,
         completed: true
       },
       {
         id: 2,
         title: "Подготовка основания",
         description: "Убираем строительный мусор с кровли и видим застойные зоны.",
-        imageUrl: "/projects/kp_avstria/austria-2.jpg",
+        imageUrl: kpAvstriaSecondImg,
         completed: true
       },
       {
         id: 3,
         title: "Монтаж утеплителя",
         description: "кладка и закрепление утеплителя, установка воронок.",
-        imageUrl: "/projects/kp_avstria/austria-3.jpg",
+        imageUrl: kpAvstriaThirdImg,
         completed: true
       },
       {
         id: 4,
         title: "Монтаж ПВХ мембраны",
         description: "Укладка и сварка ПВХ мембраны с обеспечением герметичности.",
-        imageUrl: "/projects/kp_avstria/austria-4.jpg",
+        imageUrl: kpAvstriaFourthImg,
         completed: true
       },
       {
         id: 5,
         title: "Устройство примыканий",
         description: "Финальный вид кровельного покрытия.",
-        imageUrl: "/projects/kp_avstria/austria-7.jpg",
+        imageUrl:  kpAvstriaSeventhImg,
         completed: true
       }
     ],

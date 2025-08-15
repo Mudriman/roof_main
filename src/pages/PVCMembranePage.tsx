@@ -2,13 +2,15 @@ import React from 'react';
 import { ContactSection } from '../components/ContactSection';
 import { ShieldIcon, CheckIcon, ZapIcon, DropletIcon, SunIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import montagPvxImg from '@/assets/montag-pvx.jpg';
+
 export const PVCMembranePage = () => {
   return <div className="w-full bg-white">
       {/* Hero Section */}
       <section className="relative">
         <div className="absolute inset-0 bg-black/50 z-10"></div>
         <div className="relative h-[60vh] min-h-[600px]">
-          <img src="/montag-pvx.jpg" alt="Монтаж ПВХ мембраны" className="w-full h-full object-cover" />
+          <img src={montagPvxImg} alt="Монтаж ПВХ мембраны" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 z-20 flex items-center justify-center">
           <div className="text-center px-4 sm:px-6 lg:px-8">

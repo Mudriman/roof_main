@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { ContactSection } from '../components/ContactSection';
 import { SearchIcon, FilterIcon} from 'lucide-react';
 import { useProjects } from '../../context/ProjectsContext';
-import { TestimonialsSection } from '../components/TestimonialsSection';
-import { testimonialsData } from '../../constants/testimonials';
-import { Project, ProjectCategory } from '../../constants/type';
+import { Project, ProjectCategory } from '../constants/type';
 import { ProjectCard } from '../components/ProjectCard';
+import ourWorks from '@/assets/our-works.jpg';
 
 
 // Первый блок страницы
@@ -13,7 +12,7 @@ const HeroSection = () => (
   <section className="relative">
     <div className="absolute inset-0 bg-black/60 z-10"></div>
     <div className="relative h-[600px]">
-      <img src="/our-works.jpg" alt="Наши работы" className="w-full h-full object-cover" />
+      <img src={ourWorks} alt="Наши работы" className="w-full h-full object-cover" />
     </div>
     <div className="absolute inset-0 z-20 flex items-center justify-center">
       <div className="text-center px-4 sm:px-6 lg:px-8">

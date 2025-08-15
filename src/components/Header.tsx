@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { PhoneIcon, MenuIcon, XIcon } from "lucide-react";
 import { FeedbackForm } from "./FeedbackForm";
+import logoFull from '@assets/logo-full.png';
+import logoShort from '@/assets/logo-short.png';
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,12 +25,12 @@ export const Header = () => {
         {/* Логотип */}
         <Link to="/" className="flex items-center">
           <img
-            src="/logo-full.png"
+            src={logoFull}
             alt="Solid Roof Logo"
             className="hidden md:block h-12"
           />
           <img
-            src="/logo-short.png"
+            src={logoShort}
             alt="Solid Roof Logo"
             className="block md:hidden h-10"
           />

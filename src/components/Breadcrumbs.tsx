@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { ChevronRightIcon, HomeIcon } from "lucide-react";
 import { useProjects } from "../../context/ProjectsContext";
-import { breadcrumbsMap } from "../../constants/breadcrumbsMap";
+import { breadcrumbsMap } from "../constants/breadcrumbsMap";
 
 export const Breadcrumbs = () => {
   const location = useLocation();

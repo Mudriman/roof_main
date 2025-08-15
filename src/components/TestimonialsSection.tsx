@@ -1,4 +1,4 @@
-import type {Testimonial} from "../../constants/type";
+import type {Testimonial} from "../constants/type";
 
 interface TestimonialsSectionProps {
   title?: string;

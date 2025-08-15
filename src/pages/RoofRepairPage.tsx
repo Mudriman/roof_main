@@ -2,13 +2,15 @@ import React from 'react';
 import { ContactSection } from '../components/ContactSection';
 import { ClockIcon, CheckIcon, AlertTriangleIcon, ActivityIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import repairRoofImg from '@/assets/repair-roof.jpg';
+
 export const RoofRepairPage = () => {
   return <div className="w-full bg-white">
       {/* Hero Section */}
       <section className="relative">
         <div className="absolute inset-0 bg-black/50 z-10"></div>
         <div className="relative h-[60vh] min-h-[600px]">
-          <img src="/repair-roof.jpg" alt="Ремонт кровли" className="w-full h-full object-cover" />
+          <img src={repairRoofImg} alt="Ремонт кровли" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 z-20 flex items-center justify-center">
           <div className="text-center px-4 sm:px-6 lg:px-8">

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ProjectsGrid } from '../components/ProjectsGrid';
 import { useProjects } from '../../context/ProjectsContext';
 import { FeedbackForm } from '../components/FeedbackForm';
+import aboutUsImg from '@/assets/O_nas_main2.jpg';
 
 export function AboutUs() {
   const projects = useProjects();
@@ -13,9 +14,9 @@ export function AboutUs() {
     {feedbackOpen && (
       <FeedbackForm onClose={() => setFeedbackOpen(false)} />
     )}
-    <div className="relative h-[600px] w-full">
+    <div className="relative h-[60vh] min-h-[600px] w-full">
       <div className="absolute inset-0 bg-black/60 z-10"></div>
-      <img src="/O_nas_main2.jpg" alt="Кровельные работы" className="w-full h-full object-cover" />
+      <img src={aboutUsImg} alt="Кровельные работы" className="w-full h-full object-cover" />
       <div className="absolute inset-0 z-20 flex flex-col justify-center px-8 md:px-16 max-w-7xl mx-auto">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">

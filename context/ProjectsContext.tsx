@@ -1,7 +1,7 @@
 // src/context/ProjectsContext.tsx
 import React, { createContext, ReactNode, useContext } from "react";
-import { projects } from "../constants/projects";
-import { Project } from "../constants/type";
+import { projects } from "../src/constants/projects";
+import { Project } from "../src/constants/type";
 
 const ProjectsContext = createContext<Project[]>(projects);
 

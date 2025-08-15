@@ -1,6 +1,6 @@
 // components/ProjectsGrid.tsx
 import { Link } from 'react-router-dom';
-import { Project, ProjectCategory } from '../../constants/type';
+import { Project, ProjectCategory } from '../constants/type';
 
 type ProjectsGridProps = {
   projects: Project[];

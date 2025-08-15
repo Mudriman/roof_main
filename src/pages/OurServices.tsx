@@ -1,5 +1,5 @@
 import React from 'react';
-import { services } from '../../constants/services-data';
+import { services } from '../constants/services-data';
 import { ServiceCard } from '../components/ServiceCard';
 import { ContactSection } from '../components/ContactSection';
 

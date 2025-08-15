@@ -2,6 +2,8 @@ import React from 'react';
 import { ContactSection } from '../components/ContactSection';
 import { LayoutIcon, CheckIcon, ThermometerIcon, UmbrellaIcon, BarChart2Icon } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import roofTightImg from '@/assets/roof-tight.jpg';
+
 export const FlatRoofPage = () => {
   return <div className="w-full bg-white">
       
@@ -9,7 +11,7 @@ export const FlatRoofPage = () => {
       <section className="relative">
         <div className="absolute inset-0 bg-black/50 z-10"></div>
         <div className="relative h-[60vh] min-h-[600px]">
-          <img src="/roof-tight.jpg" alt="Устройство плоских крыш" className="w-full h-full object-cover" />
+          <img src={roofTightImg} alt="Устройство плоских крыш" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 z-20 flex items-center justify-center">
           <div className="text-center px-4 sm:px-6 lg:px-8">

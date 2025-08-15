@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Project } from "../../constants/type";
+import { Project } from "../constants/type";
 import { ExternalLinkIcon } from "lucide-react";
 
 type ProjectCardProps = {

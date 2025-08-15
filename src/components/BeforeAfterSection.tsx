@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BeforeAfterSlider } from './BeforeAfterSlider';
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Project } from '../../constants/type';
+import { Project } from '../constants/type';
 
 interface BeforeAfterSectionProps {
   projects: Project[];

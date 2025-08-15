@@ -1,6 +1,6 @@
 // ServiceCard.tsx
 import { Link } from 'react-router-dom';
-import type {Service} from "../../constants/type";
+import type {Service} from "../constants/type";
 
 export const ServiceCard = ({ service }: { service: Service }) => (
   <div className="bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 hover:shadow-xl">
