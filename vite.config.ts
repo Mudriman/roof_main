@@ -12,7 +12,4 @@ export default defineConfig({
     },
   },
   base: "/roof_main/",
-  build: {
-    assetsInlineLimit: 0 // Отключаем встраивание изображений в JS
-  }
 })

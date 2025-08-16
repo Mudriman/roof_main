@@ -7,7 +7,7 @@ import AppRoutes from "./routes";
 export function App() {
   return (
     <ProjectsProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/roof_main">
         <AppRoutes />
       </BrowserRouter>
     </ProjectsProvider>
