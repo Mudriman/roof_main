@@ -1,150 +1,103 @@
 import React, { useState } from 'react';
 import cn from "clsx";
-import { ShieldCheck, Clock, CheckCircle, Award } from "lucide-react";
 import { Link } from 'react-router-dom';
 import { useProjects } from '../../context/ProjectsContext';
 import { BeforeAfterSection } from '../components/BeforeAfterSection';
 import { SubApplication } from '../components/SubApplication';
-import { TestimonialsSection } from '../components/TestimonialsSection';
-import { testimonialsData } from '../constants/testimonials';
 import { FeedbackForm } from '../components/FeedbackForm';
 import homeBack from '@assets/main_home.png';
-const features = [
-    {
-        icon: ShieldCheck,
-        title: "Гарантия качества",
-        text: "Предоставляем до 5 лет гарантии на все виды работ и используемые материалы.",
-    },
-    {
-        icon: Clock,
-        title: "Соблюдение сроков",
-        text: "Выполняем работы строго в соответствии с согласованными графиками.",
-    },
-    {
-        icon: Award,
-        title: "Сертифицированные материалы",
-        text: "Используем только сертифицированные материалы.",
-    },
-    {
-        icon: CheckCircle,
-        title: "Гарантия качества",
-        text: "Предоставляем до 5 лет гарантии на все виды работ и используемые материалы.",
-    },
-];
+
 
 const Hero = () => {
     const [feedbackOpen, setFeedbackOpen] = useState(false);
     return (
-        <section className="relative w-full h-[80vh] min-h-[500px] flex items-center overflow-hidden">
-            {/* Фоновое изображение с улучшенным затемнением */}
-            {feedbackOpen && (
-                <FeedbackForm onClose={() => setFeedbackOpen(false)} />
-            )}
-            <div className="absolute inset-0">
-                <img
-                    src={homeBack}
-                    alt="Крыша"
-                    className="w-full h-full object-cover"
-                />
-                <div
-                    className={cn(
-                        "absolute inset-0",
-                        // Для экранов < 1300px: полное затемнение с градиентом сверху
-                        "bg-black/50", // Базовое затемнение
-                        "bg-gradient-to-t from-black/70 to-transparent", // Дополнительный градиент
+    <section className="relative w-full h-screen min-h-[600px] flex items-center overflow-hidden">
+      {/* Форма обратной связи */}
+      {feedbackOpen && <FeedbackForm onClose={() => setFeedbackOpen(false)} />}
 
-                        // Для экранов ≥ 1300px: затемнение только левой половины
-                        "xl:bg-none", // Отключаем глобальное затемнение
-                        "xl:bg-gradient-to-r xl:from-black/80 xl:via-black/50 xl:to-transparent",
-                        "xl:w-1/2" // Занимает ровно половину экрана
-                    )}
-                />
-            </div>
+      {/* Фоновое изображение + градиент */}
+      <div className="absolute inset-0">
+        <img
+          src={homeBack}
+          alt="Крыша"
+          className="w-full h-full object-cover"
+        />
+        <div
+          className={cn(
+            "absolute inset-0",
+            "bg-black/50 bg-gradient-to-t from-black/70 to-transparent",
+            "xl:bg-none xl:bg-gradient-to-r xl:from-black/80 xl:via-black/50 xl:to-transparent",
+            "xl:w-1/2"
+          )}
+        />
+      </div>
 
-            {/* Контент */}
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-white z-10">
-                <div className={cn(
-                    "max-w-full space-y-6", // Добавил space-y-6 для вертиканых отступов
-                    "sm:max-w-lg md:max-w-xl lg:max-w-2xl",
-                    // Ограничиваем ширину текстового блока на широких экранах
-                    "xl:max-w-[50%]",
-                    // Добавляем немного отступа сверху на мобильных
-                    "mt-10 sm:mt-0"
-                )}>
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-snug sm:leading-tight mb-3 md:mb-4">
-                        Надежные кровельные решения из ПВХ мембраны
-                    </h1>
-                    <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 md:mb-8 text-white/90 leading-relaxed max-w-[90%]">
-                        Профессиональный монтаж современных кровельных систем с гарантией качества.
-                        Специализируемся на плоских кровлях для жилых и коммерческих объектов.
-                    </p>
+      {/* Контент */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-white z-10">
+        <div
+          className={cn(
+            "max-w-full space-y-6",
+            "sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-[50%]",
+            "mt-10 sm:mt-0"
+          )}
+        >
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug sm:leading-tight mb-4">
+            Плоская кровля под ключ — надёжно, красиво и с гарантией
+          </h1>
 
-                    {/* Кнопки */}
-                    <div className="flex flex-col sm:flex-row gap-3 mb-8 md:mb-10">
-                        <button onClick={() => setFeedbackOpen(true)} className="bg-red-600 hover:bg-red-700 px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg text-white font-medium transition-colors text-base shadow-lg hover:shadow-red-700/30">
-                            Консультация
-                        </button>
-                        <Link
-                            to="/our-works"
-                            className={cn(
-                                "bg-white/10 hover:bg-white/20 backdrop-blur-sm",
-                                "border border-white/20 px-5 py-2.5 sm:px-6 sm:py-3",
-                                "rounded-lg font-medium transition-colors text-base",
-                                "shadow-lg hover:shadow-white/10",
-                                "text-center sm:text-left"
-                            )}
-                        >
-                            Проекты
-                        </Link>
-                    </div>
+          <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mb-8">
+            Делаем кровлю из ПВХ-мембраны, которая прослужит десятилетиями.
+            <br className="hidden sm:block" />
+            Без протечек, с гарантией до 5 лет и ценой до{" "}
+            <span className="font-semibold text-white">8 000 ₽/м²</span>.
+          </p>
 
-                    {/* Статистика */}
-                    <div className={cn(
-                        "flex flex-wrap gap-6 sm:gap-8",
-                        "backdrop-blur-sm bg-white/10 p-4 rounded-xl",
-                        "border border-white/10",
-                        "mx-auto sm:mx-0",
-                        "w-max max-w-full"
-                    )}>
-                        <div className="text-center min-w-[70px]">
-                            <p className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1">15+</p>
-                            <span className="text-xs sm:text-sm opacity-80">лет опыта</span>
-                        </div>
-                        <div className="text-center min-w-[70px]">
-                            <p className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1">500+</p>
-                            <span className="text-xs sm:text-sm opacity-80">проектов</span>
-                        </div>
-                        <div className="text-center min-w-[70px]">
-                            <p className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1">5</p>
-                            <span className="text-xs sm:text-sm opacity-80">лет гарантии</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <button
+              onClick={() => setFeedbackOpen(true)}
+              className="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-lg text-white font-semibold transition-colors text-base shadow-lg hover:shadow-red-700/30"
+            >
+              Консультация
+            </button>
+
+            <Link
+              to="/our-works"
+              className={cn(
+                "bg-white/10 hover:bg-white/20 backdrop-blur-sm",
+                "border border-white/20 px-6 py-3 rounded-lg font-semibold transition-colors text-base",
+                "shadow-lg hover:shadow-white/10 text-center sm:text-left"
+              )}
+            >
+              Посмотреть проекты
+            </Link>
+          </div>
+
+        </div>
+      </div>
+    </section>
     );
 };
 
 const WhyChooseUs = () => {
     return (
-        <section className="py-16  bg-white">
-            <div className="container max-w-7xl mx-auto px-4 text-center">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">Почему выбирают нас</h2>
-                <p className="text-gray-600 max-w-2xl mx-auto mb-12">
-                    Более 15 лет мы создаем надежные кровельные решения, которым доверяют наши клиенты
-                </p>
-
-                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-                    {features.map(({ icon: Icon, title, text }, index) => (
-                        <div key={index} className="flex flex-col items-center text-center">
-                            <Icon size={40} className="text-red-600 mb-4" />
-                            <h3 className="text-lg font-semibold mb-2">{title}</h3>
-                            <p className="text-gray-600 text-sm">{text}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          Стоимость и преимущества
+        </h2>
+        <p className="text-gray-700 max-w-2xl mx-auto text-base md:text-lg">
+          Мы предлагаем прозрачную стоимость и гарантированное качество:
+          <br />
+          <span className="font-semibold text-gray-900">
+            от 8 000 ₽/м² по бетонному основанию
+          </span>{" "}
+          и{" "}
+          <span className="font-semibold text-gray-900">
+            от 350 ₽/м² за гидроизоляцию
+          </span>
+        </p>
+      </div>
+    </section>
     );
 };
 
@@ -199,13 +152,14 @@ const ProfessionalApproach = () => {
 const Home = () => {
     const projects = useProjects();
 
+
     return (
         <div>
             <Hero />
             <WhyChooseUs />
             <ProfessionalApproach />
             <BeforeAfterSection projects={projects} />
-            <TestimonialsSection testimonials={testimonialsData} />
+            {/* <TestimonialsSection testimonials={testimonialsData} /> */}
             <SubApplication />
         </div>
     );

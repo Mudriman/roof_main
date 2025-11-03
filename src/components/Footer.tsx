@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PhoneIcon, MailIcon, MapPinIcon } from 'lucide-react';
+import logoDark from '@assets/logo-dark.png';
+
 export const Footer = () => {
   return <footer className="bg-gray-900 text-white py-8 px-4 sm:px-6 lg:px-8">
     <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
       <div>
         <div className="flex items-center mb-6">
-          <img src="/logo-dark.png" alt="Solid Roof Logo" className="h-12 bg-transparent p-1 rounded" />
+          <img src={logoDark} alt="Solid Roof Logo" className="h-12 bg-transparent p-1 rounded" />
         </div>
         <p className="text-gray-400 mb-6">
           Профессиональные кровельные работы с гарантией качества и
@@ -68,7 +70,7 @@ export const Footer = () => {
           <li className="flex items-center">
             <PhoneIcon className="w-5 h-5 text-red-500 mr-3 flex-shrink-0" />
             <a href="tel:+79892132483" className="text-gray-400 hover:text-white transition duration-300">
-              +7 (989) 213-24-83
+              +7 (989) 213-24-81
             </a>
           </li>
           <li className="flex items-center">

@@ -26,7 +26,7 @@ export const SubApplication = () => {
                   <h4 className="text-sm font-medium text-gray-500 mb-1">
                     Телефон
                   </h4>
-                  <p className="text-lg">+7 (989) 213-2381</p>
+                  <p className="text-lg">+7 (989) 213-24-81</p>
                 </div>
               </div>
               <div className="flex items-start">
