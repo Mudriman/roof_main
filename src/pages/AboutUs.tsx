@@ -9,35 +9,85 @@ import aboutUsImg from '@/assets/O_nas_main2.jpg';
 export function AboutUs() {
   const projects = useProjects();
   const [feedbackOpen, setFeedbackOpen] = useState(false);
-
+  
   return <div className="flex flex-col min-h-screen bg-white">
     {feedbackOpen && (
       <FeedbackForm onClose={() => setFeedbackOpen(false)} />
     )}
-    <div className="relative h-[60vh] min-h-[600px] w-full">
-      <div className="absolute inset-0 bg-black/60 z-10"></div>
-      <img src={aboutUsImg} alt="Кровельные работы" className="w-full h-full object-cover" />
-      <div className="absolute inset-0 z-20 flex flex-col justify-center px-8 md:px-16 max-w-7xl mx-auto">
-        <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Надежные кровельные решения от профессионалов
-          </h1>
-          <p className="text-xl text-white mb-8 leading-relaxed">
-            SOLID ROOF — это 15+ лет опыта, 500+ успешных проектов и гарантия
-            качества до 5 лет. Мы создаем долговечные кровельные системы,
-            которые защищают ваше имущество на десятилетия.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <button onClick={() => setFeedbackOpen(true)} className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-md font-medium text-lg transition-colors">
-              Запросить расчет
-            </button>
-            <Link to="/our-works" className="bg-white hover:bg-gray-100 text-red-600 px-8 py-3 rounded-md font-medium text-lg transition-colors">
-              Наши проекты
-            </Link>
+    <section className="relative min-h-[80vh] flex items-center overflow-hidden">
+      <div className="absolute inset-0">
+        <img
+          src={aboutUsImg}
+          alt="Кровельные работы"
+          className="w-full h-full object-cover object-center scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-transparent"></div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-2xl">
+          <div className="space-y-6">
+            {/* Бейдж */}
+            <div className="inline-flex items-center gap-2 bg-red-600/20 border border-red-500/30 text-red-200 px-4 py-2 rounded-full text-sm backdrop-blur-sm">
+              <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+              SOLID ROOF • С 2008 года
+            </div>
+
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight">
+              Надежные <span className="text-red-500">кровельные</span> решения
+            </h1>
+
+            <p className="text-xl text-white/80 leading-relaxed max-w-xl">
+              <span className="font-semibold text-white">SOLID ROOF</span> — это 15+ лет опыта,
+              500+ успешных проектов и гарантия качества. Создаем долговечные кровельные системы,
+              которые защищают ваше имущество на десятилетия.
+            </p>
+
+            {/* Статистика */}
+            <div className="flex flex-wrap gap-6 mt-6">
+              <div className="text-white">
+                <div className="text-2xl font-bold text-red-500">15+</div>
+                <div className="text-white/70 text-sm">лет опыта</div>
+              </div>
+              <div className="text-white">
+                <div className="text-2xl font-bold text-red-500">500+</div>
+                <div className="text-white/70 text-sm">проектов</div>
+              </div>
+              <div className="text-white">
+                <div className="text-2xl font-bold text-red-500">5 лет</div>
+                <div className="text-white/70 text-sm">гарантии</div>
+              </div>
+            </div>
+
+            {/* CTA кнопки */}
+            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+              <button
+                onClick={() => setFeedbackOpen(true)}
+                className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-red-500/25 transform hover:-translate-y-1"
+              >
+                Запросить расчет
+              </button>
+              <Link
+                to="/our-works"
+                className="border border-white/30 text-white px-8 py-4 rounded-xl font-semibold backdrop-blur-sm bg-white/10 hover:bg-white/20 transition-all duration-300 text-center"
+              >
+                Наши проекты
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+
+      {/* Скролл-индикатор */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-white/70 text-sm">Узнайте больше о нас</span>
+          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-bounce"></div>
+          </div>
+        </div>
+      </div>
+    </section>
     {/* Company Info */}
     <div className="py-16 px-4 md:px-16 max-w-7xl mx-auto">
       <div className="text-center mb-16">

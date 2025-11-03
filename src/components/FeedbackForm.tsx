@@ -15,22 +15,45 @@ export const FeedbackForm = ({ onClose }: FeedbackFormProps) => {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const accessKey = "";
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    
+
     try {
-      // Здесь будет логика отправки формы
-      console.log("Форма отправлена:", formData);
-      alert("Спасибо! Мы свяжемся с вами в ближайшее время.");
-      onClose();
-    } catch (error) {
-      alert("Ошибка при отправке. Пожалуйста, попробуйте позже.");
+      const data = {
+        access_key: accessKey,
+        subject: "Новая заявка с сайта по кровельным работам",
+        ...formData
+      };
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert("Спасибо! Мы свяжемся с вами в ближайшее время.");
+        onClose();
+        setFormData({ name: "", phone: "", message: "" });
+      } else {
+        alert("Ошибка при отправке. Попробуйте позже.");
+      }
+    } catch {
+      alert("Ошибка при отправке. Проверьте соединение с интернетом. Также данная функция пока в разработке");
     } finally {
       setIsLoading(false);
     }
@@ -41,7 +64,7 @@ export const FeedbackForm = ({ onClose }: FeedbackFormProps) => {
       <div className="bg-white rounded-lg shadow-xl p-6 w-full max-w-md mx-4">
         <div className="flex justify-between items-center mb-4">
           <h3 className="text-xl font-bold">Запросить расчет</h3>
-          <button 
+          <button
             onClick={onClose}
             className="text-gray-500 hover:text-red-600"
             disabled={isLoading}
@@ -49,10 +72,15 @@ export const FeedbackForm = ({ onClose }: FeedbackFormProps) => {
             <XIcon className="w-6 h-6" />
           </button>
         </div>
-        
+
         <form onSubmit={handleSubmit} className="space-y-4">
+          <input type="hidden" name="access_key" value={accessKey} />
+
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Ваше имя
             </label>
             <div className="relative">
@@ -69,9 +97,12 @@ export const FeedbackForm = ({ onClose }: FeedbackFormProps) => {
               />
             </div>
           </div>
-          
+
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="phone"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Телефон
             </label>
             <div className="relative">
@@ -88,9 +119,12 @@ export const FeedbackForm = ({ onClose }: FeedbackFormProps) => {
               />
             </div>
           </div>
-          
+
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="message"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Сообщение (необязательно)
             </label>
             <textarea
@@ -103,7 +137,7 @@ export const FeedbackForm = ({ onClose }: FeedbackFormProps) => {
               disabled={isLoading}
             />
           </div>
-          
+
           <button
             type="submit"
             className="w-full bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700 transition duration-300 flex items-center justify-center disabled:opacity-70"

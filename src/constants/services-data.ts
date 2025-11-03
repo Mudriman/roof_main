@@ -14,7 +14,7 @@ export const services: Service[] = [
     link: '/services/pvc-membrane',
   },
   {
-    id: 'pvc-membrane',
+    id: 'roof-repair',
     title: 'Ремонт кровли',
     description: 'Оперативный и качественный ремонт плоской кровли с использованием современных материалов и технологий.',
     icon: ClockIcon,
@@ -22,7 +22,7 @@ export const services: Service[] = [
     link: '/services/roof-repair',
   },
   {
-    id: 'pvc-membrane',
+    id: 'flat-roof',
     title: 'Устройство плоских крыш',
     description: 'Полный комплекс работ по устройству плоских крыш с учетом всех технических требований и климатических особенностей.',
     icon: LayoutIcon,

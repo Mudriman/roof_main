@@ -1,26 +1,76 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ContactSection } from '../components/ContactSection';
 import { ShieldIcon, CheckIcon, ZapIcon, DropletIcon, SunIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import montagPvxImg from '@/assets/montag-pvx.jpg';
+import { FeedbackForm } from '../components/FeedbackForm';
 
 export const PVCMembranePage = () => {
-  return <div className="w-full bg-white">
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
+  return (
+    <div className="w-full bg-white">
       {/* Hero Section */}
-      <section className="relative">
-        <div className="absolute inset-0 bg-black/50 z-10"></div>
-        <div className="relative h-[60vh] min-h-[600px]">
-          <img src={montagPvxImg} alt="Монтаж ПВХ мембраны" className="w-full h-full object-cover" />
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden">
+        {feedbackOpen && <FeedbackForm onClose={() => setFeedbackOpen(false)} />}
+        <div className="absolute inset-0">
+          <img
+            src={montagPvxImg}
+            alt="Монтаж ПВХ мембраны"
+            className="w-full h-full object-cover object-right"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-transparent"></div>
         </div>
-        <div className="absolute inset-0 z-20 flex items-center justify-center">
-          <div className="text-center px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-              Монтаж ПВХ мембраны
-            </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              Современное решение для надежной гидроизоляции кровли с длительным
-              сроком службы
-            </p>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="max-w-2xl">
+            <div className="space-y-6">
+              {/* Бейдж */}
+              <div className="inline-flex items-center gap-2 bg-red-600/20 border border-red-500/30 text-red-200 px-4 py-2 rounded-full text-sm backdrop-blur-sm">
+                <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                Профессиональный монтаж
+              </div>
+
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight">
+                ПВХ <span className="text-red-500">мембрана</span>
+              </h1>
+
+              <p className="text-xl text-white/80 leading-relaxed max-w-xl">
+                Надежная гидроизоляция кровли с гарантией <span className="font-semibold text-white">10 лет</span>.
+                Современные технологии для долговечной защиты вашего здания.
+              </p>
+
+              {/* Преимущества списком */}
+              <div className="space-y-3 mt-6">
+                {['Гарантия 10 лет', 'Быстрый монтаж', 'Европейские материалы'].map((item, index) => (
+                  <div key={index} className="flex items-center gap-3 text-white/90">
+                    <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                    {item}
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                <button 
+                  onClick={() => setFeedbackOpen(true)}
+                  className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-red-500/25"
+                >
+                  Рассчитать стоимость
+                </button>
+                <button className="border border-white/30 text-white px-8 py-4 rounded-xl font-semibold backdrop-blur-sm bg-white/10 hover:bg-white/20 transition-all duration-300">
+                  +7 (989) 213-24-81
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+          <div className="flex flex-col items-center gap-2">
+            <span className="text-white/70 text-sm">Листайте вниз</span>
+            <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+              <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-bounce"></div>
+            </div>
           </div>
         </div>
       </section>
@@ -68,9 +118,25 @@ export const PVCMembranePage = () => {
                     </p>
                   </div>
                 </div>
+
                 <div className="flex">
                   <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0 mt-1">
                     <span className="text-white font-bold">2</span>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">
+                      Устройство пароизоляции
+                    </h4>
+                    <p className="text-gray-700">
+                      Монтаж пароизоляционной пленки для защиты утеплителя от влаги,
+                      поступающей из помещений здания. Герметизация швов и примыканий.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex">
+                  <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0 mt-1">
+                    <span className="text-white font-bold">3</span>
                   </div>
                   <div>
                     <h4 className="text-xl font-bold text-gray-900 mb-2">
@@ -78,13 +144,14 @@ export const PVCMembranePage = () => {
                     </h4>
                     <p className="text-gray-700">
                       Укладка теплоизоляционных плит из минеральной ваты или
-                      экструдированного пенополистирола.
+                      экструдированного пенополистирола вразбежку швов.
                     </p>
                   </div>
                 </div>
+
                 <div className="flex">
                   <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0 mt-1">
-                    <span className="text-white font-bold">3</span>
+                    <span className="text-white font-bold">4</span>
                   </div>
                   <div>
                     <h4 className="text-xl font-bold text-gray-900 mb-2">
@@ -92,13 +159,14 @@ export const PVCMembranePage = () => {
                     </h4>
                     <p className="text-gray-700">
                       Укладка геотекстиля для защиты ПВХ мембраны от
-                      механических повреждений.
+                      механических повреждений и компенсации температурных расширений.
                     </p>
                   </div>
                 </div>
+
                 <div className="flex">
                   <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0 mt-1">
-                    <span className="text-white font-bold">4</span>
+                    <span className="text-white font-bold">5</span>
                   </div>
                   <div>
                     <h4 className="text-xl font-bold text-gray-900 mb-2">
@@ -106,13 +174,14 @@ export const PVCMembranePage = () => {
                     </h4>
                     <p className="text-gray-700">
                       Раскрой материала, укладка полотен с нахлестом, сварка
-                      швов с помощью специального оборудования.
+                      швов с помощью автоматического и ручного оборудования.
                     </p>
                   </div>
                 </div>
+
                 <div className="flex">
                   <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0 mt-1">
-                    <span className="text-white font-bold">5</span>
+                    <span className="text-white font-bold">6</span>
                   </div>
                   <div>
                     <h4 className="text-xl font-bold text-gray-900 mb-2">
@@ -124,17 +193,18 @@ export const PVCMembranePage = () => {
                     </p>
                   </div>
                 </div>
+
                 <div className="flex">
                   <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0 mt-1">
-                    <span className="text-white font-bold">6</span>
+                    <span className="text-white font-bold">7</span>
                   </div>
                   <div>
                     <h4 className="text-xl font-bold text-gray-900 mb-2">
                       Контроль качества
                     </h4>
                     <p className="text-gray-700">
-                      Проверка герметичности швов, общий визуальный контроль
-                      качества выполненных работ.
+                      Проверка герметичности швов методом продувки воздухом,
+                      общий визуальный контроль качества выполненных работ.
                     </p>
                   </div>
                 </div>
@@ -260,7 +330,8 @@ export const PVCMembranePage = () => {
             </div>
           </div>
         </div>
-      </section>     
+      </section>
       <ContactSection />
-    </div>;
+    </div>)
+    ;
 };

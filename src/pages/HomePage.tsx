@@ -236,7 +236,6 @@ const Home = () => {
             <WhyChooseUs />
             <ProfessionalApproach />
             <BeforeAfterSection projects={projects} />
-            {/* <TestimonialsSection testimonials={testimonialsData} /> */}
             <SubApplication />
         </div>
     );

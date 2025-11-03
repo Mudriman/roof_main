@@ -1,29 +1,94 @@
 import React, { useState } from 'react';
 import { ContactSection } from '../components/ContactSection';
-import { SearchIcon, FilterIcon} from 'lucide-react';
+import { SearchIcon, FilterIcon } from 'lucide-react';
 import { useProjects } from '../../context/ProjectsContext';
 import { Project, ProjectCategory } from '../constants/type';
 import { ProjectCard } from '../components/ProjectCard';
 import ourWorks from '@/assets/our-works.jpg';
+import { FeedbackForm } from '../components/FeedbackForm';
 
 
 // Первый блок страницы
-const HeroSection = () => (
-  <section className="relative">
-    <div className="absolute inset-0 bg-black/60 z-10"></div>
-    <div className="relative h-[600px]">
-      <img src={ourWorks} alt="Наши работы" className="w-full h-full object-cover" />
-    </div>
-    <div className="absolute inset-0 z-20 flex items-center justify-center">
-      <div className="text-center px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">Наши работы</h1>
-        <p className="text-xl text-white/90 max-w-3xl mx-auto">
-          Выполненные проекты компании SOLID ROOF по монтажу и ремонту кровли в Краснодаре и Краснодарском крае
-        </p>
+const HeroSection = () => {
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
+
+  return (
+    <section className="relative min-h-[80vh] flex items-center overflow-hidden">
+      {feedbackOpen && <FeedbackForm onClose={() => setFeedbackOpen(false)} />}
+      <div className="absolute inset-0">
+        <img
+          src={ourWorks}
+          alt="Наши работы"
+          className="w-full h-full object-cover object-center scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-transparent"></div>
       </div>
-    </div>
-  </section>
-);
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-2xl">
+          <div className="space-y-6">
+            {/* Бейдж */}
+            <div className="inline-flex items-center gap-2 bg-red-600/20 border border-red-500/30 text-red-200 px-4 py-2 rounded-full text-sm backdrop-blur-sm">
+              <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+              Портфолио проектов
+            </div>
+
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight">
+              Наши <span className="text-red-500">работы</span>
+            </h1>
+
+            <p className="text-xl text-white/80 leading-relaxed max-w-xl">
+              Реализованные проекты компании SOLID ROOF по монтажу и ремонту кровли
+              в <span className="font-semibold text-white">Краснодаре</span> и
+              Краснодарском крае
+            </p>
+
+            {/* Статистика */}
+            <div className="flex flex-wrap gap-6 mt-6">
+              <div className="text-white">
+                <div className="text-2xl font-bold text-red-500">200+</div>
+                <div className="text-white/70 text-sm">проектов</div>
+              </div>
+              <div className="text-white">
+                <div className="text-2xl font-bold text-red-500">10+</div>
+                <div className="text-white/70 text-sm">лет опыта</div>
+              </div>
+              <div className="text-white">
+                <div className="text-2xl font-bold text-red-500">5 лет</div>
+                <div className="text-white/70 text-sm">гарантии</div>
+              </div>
+            </div>
+
+            {/* CTA кнопки */}
+            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+              <button 
+                 onClick={() => setFeedbackOpen(true)}
+                className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-red-500/25"
+              >
+                Вызвать мастера
+              </button>
+              <button className="border border-white/30 text-white px-8 py-4 rounded-xl font-semibold backdrop-blur-sm bg-white/10 hover:bg-white/20 transition-all duration-300">
+                +7 (989) 213-24-81
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Скролл-индикатор */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-white/70 text-sm">Листайте вниз</span>
+          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-bounce"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  );
+};
+
 
 // Блок фильтрации и поиска обьектов
 type FilterSearchSectionProps = {
@@ -48,11 +113,10 @@ const FilterSearchSection = ({
             <button
               key={category.id}
               onClick={() => onCategoryChange(category.id as ProjectCategory)}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                activeCategory === category.id 
-                  ? 'bg-red-600 text-white' 
-                  : 'bg-white text-gray-700 hover:bg-gray-100'
-              }`}
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeCategory === category.id
+                ? 'bg-red-600 text-white'
+                : 'bg-white text-gray-700 hover:bg-gray-100'
+                }`}
             >
               {category.label}
             </button>
@@ -139,6 +203,7 @@ export const OurWorksPage = () => {
   const projects = useProjects();
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>('all');
   const [searchTerm, setSearchTerm] = useState('');
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
 
   const filteredProjects = projects.filter(project => {
     const matchesCategory = activeCategory === 'all' || project.category === activeCategory;
