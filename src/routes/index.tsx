@@ -11,6 +11,7 @@ import { ProjectDetailPage } from "../pages/ProjectDetailPage";
 import { AboutUs } from "../pages/AboutUs";
 import { HeroHeader } from "../components/header/HeroHeader";
 import { MainHeader } from "../components/header/MainHeader";
+import { Footer } from "../components/Footer";
 
 export default function AppRoutes() {
   return (
@@ -22,6 +23,7 @@ export default function AppRoutes() {
           <>
             <HeroHeader />
             <Home />
+            <Footer />
           </>
         } 
       />

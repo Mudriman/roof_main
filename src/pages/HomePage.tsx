@@ -79,74 +79,151 @@ const Hero = () => {
 };
 
 const WhyChooseUs = () => {
-    return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">
-          Стоимость и преимущества
-        </h2>
-        <p className="text-gray-700 max-w-2xl mx-auto text-base md:text-lg">
-          Мы предлагаем прозрачную стоимость и гарантированное качество:
-          <br />
-          <span className="font-semibold text-gray-900">
-            от 8 000 ₽/м² по бетонному основанию
-          </span>{" "}
-          и{" "}
-          <span className="font-semibold text-gray-900">
-            от 350 ₽/м² за гидроизоляцию
-          </span>
-        </p>
+  return (
+    <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Заголовок */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight text-gray-900">
+            Стоимость и преимущества
+          </h2>
+          <p className="text-gray-500 text-lg">
+            Цена, которую вы видите — цена, которую вы платите. Без доплат и сюрпризов.
+          </p>
+        </div>
+
+        {/* Контент */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Левая часть */}
+          <div className="space-y-8">
+            <div className="relative">
+              <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200">
+                <div className="text-4xl md:text-5xl font-semibold text-gray-900 mb-2">
+                  до 8 000 ₽/м²
+                </div>
+                <p className="text-gray-600 text-lg">по бетонному основанию</p>
+              </div>
+              <span className="absolute -top-2 -right-2 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium shadow-sm">
+                максимальная цена
+              </span>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200">
+              <div className="text-4xl md:text-5xl font-semibold text-gray-900 mb-2">
+                от 350 ₽/м²
+              </div>
+              <p className="text-gray-600 text-lg">за гидроизоляцию</p>
+              <p className="text-sm text-gray-400 mt-2">
+                Стоимость не изменится после согласования.
+              </p>
+            </div>
+          </div>
+
+          {/* Правая часть */}
+          <div className="relative">
+            <div className="bg-gradient-to-br from-red-600 to-rose-500 rounded-3xl p-10 text-white shadow-md">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-20 h-20 bg-white/15 backdrop-blur-sm rounded-full flex items-center justify-center mb-6">
+                  <svg
+                    className="w-10 h-10 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-semibold mb-3">Гарантия цены и качества</h3>
+                <p className="text-white/80 text-lg leading-relaxed">
+                  Заключаем договор с фиксированной стоимостью — <br />
+                  без скрытых платежей и пересчетов после старта.
+                </p>
+              </div>
+            </div>
+
+            {/* Декор */}
+            <div className="absolute -bottom-5 -left-5 w-10 h-10 bg-red-200/50 rounded-full blur-md"></div>
+            <div className="absolute -top-5 -right-5 w-8 h-8 bg-rose-300/40 rounded-full blur-md"></div>
+          </div>
+        </div>
       </div>
     </section>
-    );
+  );
 };
 
 const ProfessionalApproach = () => {
-    return (
-        <section className="py-16 bg-gray-50">
-            <div className="container max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+  return (
+    <section className="py-24 bg-gray-50">
+      <div className="container max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+        {/* Текстовая часть */}
+        <div>
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-gray-900">
+            Профессиональный подход к каждому объекту
+          </h2>
+          <p className="text-gray-600 mb-8 text-lg leading-relaxed">
+            Мы не просто выполняем монтаж — мы точно рассчитываем, сколько материалов нужно
+            именно для вашего объекта. Без переплат и излишков: вы покупаете ровно то количество,
+            которое действительно необходимо.
+          </p>
 
-                {/* Текстовая часть */}
-                <div>
-                    <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                        Профессиональный подход к каждому проекту
-                    </h2>
-                    <p className="text-gray-600 mb-6">
-                        Мы понимаем, что каждый объект уникален и требует индивидуального подхода.
-                        Наши специалисты проводят детальное обследование, учитывают все особенности
-                        конструкции и ваши пожелания, чтобы предложить оптимальное решение.
-                    </p>
+          <ul className="space-y-4 text-gray-700">
+            <li className="flex items-start">
+              <span className="w-2.5 h-2.5 bg-red-600 rounded-full mr-3 mt-2"></span>
+              <span>
+                <strong>Точный замер на месте</strong> — учитываем уклоны, примыкания, вентиляцию и все детали конструкции.
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="w-2.5 h-2.5 bg-red-600 rounded-full mr-3 mt-2"></span>
+              <span>
+                <strong>Расчёт расхода материалов</strong> с учётом технических норм, без округлений “в плюс”.
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="w-2.5 h-2.5 bg-red-600 rounded-full mr-3 mt-2"></span>
+              <span>
+                <strong>Экономия бюджета</strong> — никаких лишних закупок, каждый метр идёт в дело.
+              </span>
+            </li>
+          </ul>
+        </div>
 
-                    <ul className="space-y-3 text-gray-700">
-                        <li className="flex items-center">
-                            <span className="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
-                            Бесплатная консультация
-                        </li>
-                        <li className="flex items-center">
-                            <span className="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
-                            Детальная смета без скрытых платежей
-                        </li>
-                        <li className="flex items-center">
-                            <span className="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
-                            Поэтапная оплата работ
-                        </li>
-                    </ul>
-                </div>
-
-                {/* Статистика */}
-                <div className="bg-white rounded-lg shadow p-8 text-center">
-                    <p className="text-red-600 text-2xl font-bold mb-2">500+</p>
-                    <p className="text-gray-600 mb-6">выполненных проектов</p>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div className="bg-red-600 h-2 rounded-full" style={{ width: "95%" }}></div>
-                    </div>
-                    <p className="text-sm text-gray-500 mt-2">
-                        95% клиентов рекомендуют нас своим знакомым
-                    </p>
-                </div>
-            </div>
-        </section>
-    );
+        {/* Правая часть — визуальный блок вместо статистики */}
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-10 text-center">
+          <div className="w-20 h-20 mx-auto mb-6 bg-red-50 rounded-full flex items-center justify-center">
+            <svg
+              className="w-10 h-10 text-red-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6m-6 6h6a2 2 0 002-2v-5a2 2 0 00-2-2h-1"
+              />
+            </svg>
+          </div>
+          <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+            Расчёт под ваш объект
+          </h3>
+          <p className="text-gray-600 mb-6">
+            Вы получаете смету, где указано точное количество материалов и работ.  
+            Цена согласуется заранее и остаётся неизменной.
+          </p>
+          <div className="bg-gradient-to-r from-red-600 to-rose-500 text-white py-3 rounded-xl font-medium">
+            Итог = честная стоимость без переплат
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 const Home = () => {
